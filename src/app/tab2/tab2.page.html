@@ -1,17 +1,61 @@
-<ion-header [translucent]="true">
+
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Weather App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-searchbar [(ngModel)]="searchText" (ionInput)="searchLocations()"></ion-searchbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list *ngIf="locations">
+    <ion-item *ngFor="let location of locations" (click)="selectLocation(location)">
+      <ion-label>{{ location.name }}, {{ location.region }}, {{ location.country }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="weather">
+    <ion-card-header>
+      <ion-card-title>{{ weather.location.name }}, {{ weather.location.region }}, {{ weather.location.country }}</ion-card-title>
+      <ion-card-subtitle>{{ weather.forecast.forecastday[0].date }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let day of weather.forecast.forecastday">
+          <ion-thumbnail slot="start">
+            <img [src]="day.day.condition.icon" alt="{{ day.day.condition.text }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ day.date }}</h2>
+            <h3>{{ day.day.condition.text }}</h3>
+            <p>High: {{ day.day.maxtemp_c }}°C</p>
+            <p>Low: {{ day.day.mintemp_c }}°C</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="loading" class="ion-text-center">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+
+  <div *ngIf="error" class="ion-text-center">
+    {{ error }}
+  </div>
 </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+

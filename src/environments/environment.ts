@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_KEY :'f56f24967aaf51182d1d4df628297c6d',
+  API_URL:'//api.openweathermap.org/data/2.5/'
 };
 
 /*
@@ -14,3 +16,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=f56f24967aaf51182d1d4df628297c6d`

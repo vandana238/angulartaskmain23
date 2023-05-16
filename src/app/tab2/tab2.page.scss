@@ -1,0 +1,43 @@
+ion-content {
+  background-image: linear-gradient(to bottom right, #005C97, #363795);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+ion-searchbar {
+  background-color: #fff;
+  border-radius: 50px;
+  margin: 20px;
+}
+
+ion-item {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+ion-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+ion-spinner {
+  color: #fff;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  ion-content {
+    background-size: cover;
+    background-position: center;
+  }
+}

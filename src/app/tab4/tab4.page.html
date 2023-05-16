@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Todo List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <h1>{{title}}</h1>
+    <div class="form-container">
+      <ion-item>
+        <ion-input type="text" placeholder="Enter new task" [(ngModel)]="newTask"></ion-input>
+      </ion-item>
+      <ion-button (click)="addTask()" color="primary">Add Task</ion-button>
+    </div>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks">
+      <ion-input type="text" [(ngModel)]="task.name" *ngIf="task.id === editingTaskId; else readonlyTask"></ion-input>
+      <ng-template #readonlyTask>
+        <ion-label>{{ task.name }}</ion-label>
+      </ng-template>
+      <ion-button (click)="startEditingTask(task.id)" *ngIf="!isEditingTask(task.id)">EDIT</ion-button>
+      <ion-button (click)="saveTaskChanges(task.id)" *ngIf="isEditingTask(task.id)">Save</ion-button>
+      <ion-button (click)="removeTask(task.id)" slot="end">Remove</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
