@@ -1,0 +1,61 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+ion-content {
+  --background: #f2f2f2;
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    .todo-text {
+      font-size: 16px;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #333;
+      flex-grow: 1;
+      &.completed {
+        text-decoration: line-through;
+        color: #aaa;
+      }
+    }
+    ion-button {
+      --background: #0e6b98;
+      --color: #fff;
+      margin-left: 10px;
+      padding: 0 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      &.delete-btn {
+        --background: #d9534f;
+      }
+    }
+  }
+  .add-todo {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    input {
+      flex-grow: 1;
+      border: none;
+      font-size: 16px;
+      padding: 5px;
+    }
+    ion-button {
+      --background: #0e6b98;
+      --color: #fff;
+      margin-left: 10px;
+      padding: 0 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  }
+}
