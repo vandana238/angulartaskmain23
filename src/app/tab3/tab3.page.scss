@@ -1,0 +1,78 @@
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color:#0088ff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #0088ff;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #0088ff;
+}
+
+.userdata {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="submit"], button {
+  background-color: #0088ff;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+input[type="submit"]:hover, button:hover {
+  background-color: #3e8e41;
+}

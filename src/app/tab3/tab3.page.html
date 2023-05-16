@@ -1,17 +1,77 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title> About </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <table border="1">
+    <button (click)="openForm(null)">Add Data</button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <tbody class="text-center">
+      <tr>
+        <th>username</th>
+        <th>email</th>
+        <th>password</th>
+      </tr>
+
+      <tr *ngFor="let i of real">
+        <td>{{i.username}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>
+          <button (click)="openForm(userdata)">Edit</button>
+        </td>
+        <td>
+          <button (click)="deleteData(i.username)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="showForm">
+    <div class="userdata">
+      <h2 class="text-info text-center">{{formHeader}}</h2>
+      <div class="group">
+        <label for="username">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="username"
+          name="username"
+          required
+          minlength="5"
+        />
+      </div>
+      <div class="group">
+        <label for="email">email</label>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="email"
+          name="email"
+          required
+          min="1000"
+        />
+      </div>
+      <div class="group">
+        <label for="password">password</label>
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="password"
+          name="password"
+          required
+          min="1"
+        />
+      </div>
+
+      <div class="action">
+        <button *ngIf="savebtn" (click)="savedata()">Save Changes</button>
+        <button *ngIf="changesbtn" (click)="addData()">save</button>
+        <br /><br /><br />
+        <button (click)="closeForm()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <button routerLink="/">back</button>
 </ion-content>
