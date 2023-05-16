@@ -1,0 +1,26 @@
+.letter-sidebar {
+  position:fixed;
+  top:25%;
+  z-index:2;
+  right :0;
+
+
+}
+
+.letter-sidebar li{
+  width:40px;
+  text-align:center;
+
+  font-weight:500;
+
+}
+ .letter-sibebar li a{
+  text-decoration: none;
+  font-size: 14px;
+ }
+ ul {
+list-style-type:none;
+margin-top: -140px;
+    display: inline-grid;
+    gap: 10px;
+ }

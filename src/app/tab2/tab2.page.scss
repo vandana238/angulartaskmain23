@@ -1,0 +1,31 @@
+ion-header {
+  ion-toolbar {
+    --border-radius: 20px 20px 0 0;
+    --background: rgb(252, 115, 3); // dark orange transparent background
+  }
+
+  ion-searchbar {
+    --placeholder-color: #f5eded;
+    --background: rgb(26 24 24 / 29%); // transparent black search bar background
+    --border-radius: 80px; // apply border-radius to create a C-shaped search bar
+    overflow: hidden; // hide search bar overflow
+    --icon-color: #f7f2f2;
+  }
+}
+
+ion-avatar.custom {
+  --border-radius: 20%;
+  width: 150px; /* Adjust this value to control the image size */
+  height: 150px; /* Adjust this value to maintain the aspect ratio */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.name-center {
+  text-align: center;
+}

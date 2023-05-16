@@ -6,7 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-
+searchTerm: any;
+isFilterApplied = false;
+contact: any;
+filteredContacts: any;
+recentContacts: any;
   constructor() {}
 
-}
+
+
+    toggleFilter() {
+      this.isFilterApplied = !this.isFilterApplied;
+    }
+  }

@@ -1,0 +1,24 @@
+.header-row {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.ion-col-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recent-contacts-heading {
+  margin: 0;
+}
+
+.recent-contacts-row {
+  margin-top: 16px;
+}
+
+.normal-contacts-row {
+  margin-top: 32px;
+}
+
+/* Rest of your existing styles */

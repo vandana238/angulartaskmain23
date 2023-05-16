@@ -1,17 +1,50 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-row class="header-row">
+      <ion-col size="10">
+        <h1 class="recent-contacts-heading">Recent contacts</h1>
+      </ion-col>
+      <ion-col size="2" class="ion-col-right">
+        <ion-icon name="funnel"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-searchbar [(ngModel)]="searchTerm" placeholder="Search"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content class="listvalues">
+  <ion-list>
+    <ion-row class="recent-contacts-row">
+      <ng-container *ngFor="let contact of recentContacts">
+        <ion-col size="2">
+          <ion-card class="text-center">
+            <div class="image-container">
+              <ion-avatar class="custom">
+                <img [src]="contact.imageSrc" />
+              </ion-avatar>
+            </div>
+            <ion-card-content>
+              <ion-card-title class="text-center">{{ contact.name }}</ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+    <ion-row class="normal-contacts-row">
+      <ng-container *ngFor="let contact of filteredContacts">
+        <ion-col size="2">
+          <ion-card class="text-center">
+            <div class="image-container">
+              <ion-avatar class="custom">
+                <img [src]="contact.imageSrc" />
+              </ion-avatar>
+            </div>
+            <ion-card-content>
+              <ion-card-title class="text-center">{{ contact.name }}</ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-list>
 </ion-content>
